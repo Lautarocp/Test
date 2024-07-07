@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+             body{
+            background-color:  rgb(95, 151, 163);
+        }
+        label{
+            padding: 25px 25px 25px 0;
+            display: block;
+        }
+        button{
+             border: none;
+             color: white;
+             padding: 14px 28px;
+             cursor: pointer;
+             border-radius: 5px;
+             background-color: #007bff; /* Color base del botón */
+             transition: transform 0.3s ease-in-out;
+             margin-top: 12px;
+             float: right;
+           
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 8px;
+        }
+        input:focus {
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 15px;
+        }
+        select{
+            width: 100%;
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 15px;
+            height: 50px;
+            
+        }
+        .container{
+            width: 50%;
+            background-color: rgb(147, 167, 171);
+            padding: 18px 50px 75px 50px;
+            border-radius: 15px;
+            margin: auto;
+        }
+        .pulse-effect:hover {
+            background-color: #0056b3; /* Cambia el color al pasar el cursor sobre el botón */
+            }
+        .pulse-effect:active {
+            transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario usando css</h1>
+    <div class="container">   
+        <form action="http://localhost:5000/" method="post">
+        <label  for="nombre">Nombre</label><br>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required><br>
+        <label for="apellido">Apellido</label><br>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido"><br>
+        <label for="pais">Pais</label><br>
+        <select name="pais" id="pais">
+            <option disabled selected hidden>Seleccione</option>
+            <option>Argentina</option>
+            <option>Peru</option>
+            <option>Bolivia</option>
+        </select>
+        
+        <button class="btn pulse-effect">Click me</button>
+        </form>
+    </div>
+</body>
+</html>
