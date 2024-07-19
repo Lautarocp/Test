@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <http-methods>
+  <title>Iva</title>
+  <script src="Iva.js"></script>
+  <style>
+             body{
+            background-color:  rgb(95, 151, 163);
+        }
+        button{
+             border: none;
+             color: rgb(255, 255, 255);
+             padding: 14px 28px;
+             cursor: pointer;
+             border-radius: 5px;
+             background-color: #007bff; /* Color base del botón */
+             transition: transform 0.3s ease-in-out;
+             margin-top: 12px;
+             float: right;
+           
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 15px;
+        }
+        input:focus {
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 15px;
+        }
+        select{
+            width: 100%;
+            border: 2px solid rgb(0, 8, 255);
+            border-radius: 15px;
+            height: 50px;
+            
+        }
+        .container{
+            width: 50%;
+            background-color: rgb(147, 167, 171);
+            padding: 18px 50px 75px 50px;
+            border-radius: 15px;
+            margin: auto;
+        }
+        .pulse-effect:hover {
+            background-color: #0056b3; /* Cambia el color al pasar el cursor sobre el botón */
+            }
+        .pulse-effect:active {
+            transform: scale(0.9); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+        }
+  </style>
+</head>
+<body>
+  <div id="cotenedor" class="container">
+    <section name="zonaFormulario">
+      <Form name="miFormulario"></Form>
+      <input type="text" id="texto" placeholder="Numero"><br>
+      <input type="text" id="valor"  placeholder="Porcentage"><br>
+      
+      
+    
+    <section id="datos" style="color: rgb(0, 0, 0);font-size: 40px;padding-left: 1px;" >
+      
+      
+      Resultado
+    </section>
+    
+   
+    <div class="container">
+    
+      <Form name="miFormulario"></Form>
+      <input type="text" id="lado" placeholder="Lado"><br>
+     
+      <section id="daTos" style="color: rgb(0, 0, 0);font-size: 40px;padding-left: 1px; padding-bottom: 30px;">
+      
+      
+      Resultado
+      </section>
+    
+      <input type="text" id="Nombre" placeholder="Nombre"><br>
+      <input type="text" id="Apellido"  placeholder="Apellido"><br>
+  </div>
+  <button id="resolver" class="btn pulse-effect">Click me</button>
+</body>
+
+</html>
