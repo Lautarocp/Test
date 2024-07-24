@@ -30,7 +30,7 @@ function calcuAre(lado){
 }
 
 function saludo(Nombre, apellido) {
-    if ( Nombre !==null)  {
+    if ( Nombre)  {
         alert(`Hola ${Nombre} ${apellido}`);
     } 
 }
