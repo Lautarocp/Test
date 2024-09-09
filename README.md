@@ -1,6 +1,6 @@
 # Bienvenido a mi GitHub
 
-#Sobre mí
+# Sobre mí
 
 ¡Hola! Mi nombre es Lautaro y este es mi repositorio de GitHub. Este espacio está dedicado a practicar 
 y mejorar mis habilidades de programación. Aquí encontrarás una variedad de proyectos, 
