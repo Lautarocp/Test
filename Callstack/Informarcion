@@ -1,0 +1,26 @@
+Informacion
+## Accounts##
+NAME: Test101
+LAST NAME: Test202
+EMAIL: vekinir295@firain.com
+PASSWORD: 1Tijera22
+loyaltylion.init({
+        token: "39736b122c3b1bb69bb56375ec92d33b",
+        customer: {
+          id: "10274212053328",
+          email: "vekinir295@firain.com",
+          name: "Test101 Test202",
+          rechargeHash: "",
+          shopify: {
+            hasAccount: true
+          }
+        },
+        auth: {
+          date: "2025-05-06 12:26:48+0200",
+          token: "1ad9737c5757cd76b45aca449c2559bf1745e6a9"
+        },
+      });
+      Tecnologias
+      FlowBox 
+      loyaltylion platadforma de fidelizacion de ususarios
+      posen 5 tier de fidelacion
