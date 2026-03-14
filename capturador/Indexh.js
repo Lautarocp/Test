@@ -1,13 +1,12 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-const _get = require("lodash.get");
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(fileUpload());
 
 app.all("/", (req, res) => {
@@ -23,10 +22,12 @@ app.all("/", (req, res) => {
 
   console.log({ respuesta });
 
-  const archivo = _get(req, "files.archivo", null);
+  const archivo = req?.files?.archivo ?? null;
 
-  if (!!archivo) {
-    archivo.mv(`./files/${archivo.name}`, function (err) {
+  if (archivo) {
+    const safeName = path.basename(archivo.name);
+    const destino = path.join(__dirname, 'files', safeName);
+    archivo.mv(destino, function (err) {
       if (err) {
         return res.status(500).send(err);
       }

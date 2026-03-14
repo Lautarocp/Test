@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
@@ -11,7 +10,7 @@ const port = 3000;
 app.use(cors());
 
 // Middleware para analizar JSON
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Middleware para servir archivos estáticos
 app.use(express.static('public'));

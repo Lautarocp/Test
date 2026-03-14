@@ -29,17 +29,16 @@ module.exports = function veterinariasHandler(veterinarias) {
         callback(400, { mensaje: "indice no enviado" });
       },
       delete: (data, callback) => {
+        const idx = Number(data.indice);
         if (typeof data.indice !== "undefined") {
-          if (veterinarias[data.indice]) {
-            veterinarias = veterinarias.filter(
-              (_veterinaria, indice) => indice != data.indice
-            );
+          if (veterinarias[idx]) {
+            veterinarias.splice(idx, 1);
             return callback(204, {
-              mensaje: `elemento con indice ${data.indice} eliminado`,
+              mensaje: `elemento con indice ${idx} eliminado`,
             });
           }
           return callback(404, {
-            mensaje: `veterinaria con indice ${data.indice} no encontrada`,
+            mensaje: `veterinaria con indice ${idx} no encontrada`,
           });
         }
         callback(400, { mensaje: "indice no enviado" });

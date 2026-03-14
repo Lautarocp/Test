@@ -14,17 +14,16 @@ for(let i =0; i < 10; i++){
     misPromesas = [...misPromesas,fabricaDePromesas(i)];
     
 }*/
-async function miAsyncFunctio() {
+async function miAsyncFunction() {
     try {
         const misPromesa1 = await fabricaDePromesas(1);
-        //console.log("este es el valor de miPromesa1",{misPromesa1})
+        //console.log("este es el valor de miPromesa1", {misPromesa1})
         return misPromesa1;
     } catch (e) {
-        console.log("hubo un error")
+        console.log("hubo un error");
         return e;
-
     }
-};
+}
 function miFunctioNormal() {
     const miPromesa2 = fabricaDePromesas(2)
         .then(resultado => console.log(resultado))

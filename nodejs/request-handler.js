@@ -1,11 +1,18 @@
-  const url = require("url");
   const StringDecoder = require("string_decoder").StringDecoder;
   const enrutador = require("./enrutador");
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
 
   module.exports = (req, res) => {
     // Obtener la URL desde el objeto request
     const urlActual = req.url;
-    const urlParseada = url.parse(urlActual, true);
+    const urlParseada = new URL(urlActual, 'http://localhost');
 
     // Obtener la ruta
     const ruta = urlParseada.pathname;
@@ -17,7 +24,7 @@
     const metodo = req.method.toLowerCase();
 
     // Obtener variables del query URL
-    const { query = {} } = urlParseada;
+    const query = Object.fromEntries(urlParseada.searchParams);
 
     // Obtener los headers de la solicitud
     const { headers = {} } = req;
@@ -81,13 +88,12 @@
             </head>
             <body>
               <h1>Respuesta del servidor</h1>
-              <p>"query"${JSON.stringify(data.query)}</p><br>
-              <p>"Indice"${JSON.stringify(data.indice)}</p><br>
-              <p>"Ruta"${JSON.stringify(data.ruta)}</p><br>
-              <p>"Metodo" ${JSON.stringify(data.metodo)}</p><br>
-              <p>"HEADER"${JSON.stringify(data.headers)}</p><br>
-              <p>"PAYLOAD"${JSON.stringify(data.payload)}</p><br>
-              <p>"BUFFER"${JSON.stringify(data.buffer)}</p><br>
+              <p>"query": ${escapeHtml(JSON.stringify(data.query))}</p><br>
+              <p>"Indice": ${escapeHtml(JSON.stringify(data.indice))}</p><br>
+              <p>"Ruta": ${escapeHtml(JSON.stringify(data.ruta))}</p><br>
+              <p>"Metodo": ${escapeHtml(JSON.stringify(data.metodo))}</p><br>
+              <p>"HEADER": ${escapeHtml(JSON.stringify(data.headers))}</p><br>
+              <p>"PAYLOAD": ${escapeHtml(JSON.stringify(data.payload))}</p><br>
             </body>
             </html>
           `;

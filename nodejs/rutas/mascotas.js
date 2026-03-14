@@ -29,17 +29,16 @@ module.exports = function mascotasHandler(mascotas) {
         callback(400, { mensaje: "indice no enviado" });
       },
       delete: (data, callback) => {
+        const idx = Number(data.indice);
         if (typeof data.indice !== "undefined") {
-          if (mascotas[data.indice]) {
-            mascotas = mascotas.filter(
-              (_mascota, indice) => indice != data.indice
-            );
+          if (mascotas[idx]) {
+            mascotas.splice(idx, 1);
             return callback(204, {
-              mensaje: `elemento con indice ${data.indice} eliminado`,
+              mensaje: `elemento con indice ${idx} eliminado`,
             });
           }
           return callback(404, {
-            mensaje: `mascota con indice ${data.indice} no encontrada`,
+            mensaje: `mascota con indice ${idx} no encontrada`,
           });
         }
         callback(400, { mensaje: "indice no enviado" });
